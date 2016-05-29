@@ -95,12 +95,11 @@ ship_event = {
 }
 
 #Special Project Failure
-ship_event = {
+country_event = {
     id = mem_demon_ship_event.3
     title = "mem_demon_ship_event.3.name"
 	desc = "mem_demon_ship_event.3.desc"
 	picture = GFX_evt_exploding_ship
-	location = FROM
 	
 	is_triggered_only = yes
     
