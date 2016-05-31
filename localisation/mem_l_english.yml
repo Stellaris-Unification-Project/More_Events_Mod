@@ -47,6 +47,7 @@
  mem_brainworm_event.6.h:0 "What a fascinating creature..."
  mem_brainworm_event.6.i:0 "If only we had such control over our citizens' minds..."
  mem_brainworm_event.6.j:0 "These worms steal our free will!"
+ mem_brainworm_event.6.k:0 "No worm will take my mind!"
  mem_brainworm_event.7.name:0 "Ephialtes Worm Insurrection"
  mem_brainworm_event.7.desc:0 "Their plot to secretly turn us all into slaves having failed, the Worms are now striking against us openly. High ranking members of the leadership have vanished, our ships are being sabotaged, and enthralled populations are rising up in an attempt to seize control of entire planets."
  mem_brainworm_event.7.a:0 "They will be stopped!"
