@@ -6,7 +6,8 @@
 # No scope, like on_game_start
 on_yearly_pulse = {
 	events = {
-		mem_brainworm_event.5
+		pirate.4
+        mem_brainworm_event.5
 	}
 }
 
@@ -15,6 +16,8 @@ on_yearly_pulse = {
 # From = Leader
 on_leader_death = {
 	events = {
-		mem_brainworm_event.5041
+		pretender.1
+		mandate.21
+        mem_brainworm_event.5041
 	}
 }
