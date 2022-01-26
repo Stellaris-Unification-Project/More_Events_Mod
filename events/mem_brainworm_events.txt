@@ -119,7 +119,7 @@ event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		every_country = {
+		every_playable_country = {
 			limit = {
 				is_ai = no
                 any_owned_pop = { has_pop_flag = mem_brainworm_thrall }
@@ -158,13 +158,13 @@ country_event = {
             }
         }
         #Pop Infection (10 percent chance on each planet with an infected pop)
-        every_planet = {
+        every_system_planet = {
             limit = {
-                any_pop = { has_pop_flag = mem_brainworm_thrall }
+                any_owned_pop = { has_pop_flag = mem_brainworm_thrall }
             }
             random_list = {
                 10 = {
-                    random_pop = {
+                    random_owned_pop = {
                         limit = {
                             NOT = { has_pop_flag = mem_brainworm_thrall }
                         }
@@ -179,12 +179,12 @@ country_event = {
         random_owned_planet = {
             limit = {
                 NOT = {
-                    any_pop = { has_pop_flag = mem_brainworm_thrall }
+                    any_owned_pop = { has_pop_flag = mem_brainworm_thrall }
                 }
             }
             random_list = {
                 5 = {
-                    random_pop = { set_pop_flag = mem_brainworm_thrall }
+                    random_owned_pop = { set_pop_flag = mem_brainworm_thrall }
                 }
                 95 ={
                 }
@@ -584,7 +584,7 @@ country_event = {
             random_owned_planet = {
                 limit = { 
                     is_capital = no
-                    #count_pops = { 
+                    #count_owned_pop = { 
                     #    limit = { 
                     #        has_pop_flag = mem_brainworm_thrall
                     #        is_same_species = owner_species
@@ -592,7 +592,7 @@ country_event = {
                     #    count > 4
                     #}
                 }
-                random_pop = {
+                random_owned_pop = {
                     limit = { is_same_species = owner_species }
                     planet = {
                         root = {
@@ -624,14 +624,14 @@ country_event = {
                     }
                 }
                 while = {
-                    limit = { any_pop = { NOT = { is_same_species = last_created } } }
-                    random_pop = {
-                        limit = { NOT = { is_same_species = last_created } }
-                        change_pop_species = last_created
+                    limit = { any_owned_pop = { NOT = { is_same_species = last_created_species } } }
+                    random_owned_pop = {
+                        limit = { NOT = { is_same_species = last_created_species } }
+                        change_pop_species = last_created_species
                     }
                 }
             }
-            every_country = {
+            every_playable_country = {
 				limit = { is_country_type = default }
 				establish_communications_no_message = last_created_country
 			}
@@ -641,57 +641,57 @@ country_event = {
         every_owned_planet = {
             limit = { 
                 is_capital = no
-                any_pop = { has_pop_flag = mem_brainworm_thrall }
+                any_owned_pop = { has_pop_flag = mem_brainworm_thrall }
             }
             while = {
                 limit = { 
-                    any_pop = { 
+                    any_owned_pop = { 
                         AND = { 
                             has_pop_flag = mem_brainworm_thrall
-                            NOT = { is_same_species = last_created }
+                            NOT = { is_same_species = last_created_species }
                         }
                     }
                 }
-                random_pop = {
+                random_owned_pop = {
                     limit = { has_pop_flag = mem_brainworm_thrall }
-                    change_pop_species = last_created
+                    change_pop_species = last_created_species
                 }
             }
             create_army = {
                 name = "Ephialtes Mindthralls"
                 type = "assault_army"
-                species = last_created
-                owner = last_created
+                species = last_created_species
+                owner = last_created_country
             }
             create_army = {
                 name = "Ephialtes Mindthralls"
                 type = "assault_army"
-                species = last_created
-                owner = last_created
+                species = last_created_species
+                owner = last_created_country
             }
             create_army = {
                 name = "Ephialtes Mindthralls"
                 type = "assault_army"
-                species = last_created
-                owner = last_created
+                species = last_created_species
+                owner = last_created_country
             }
             create_army = {
                 name = "Ephialtes Mindthralls"
                 type = "assault_army"
-                species = last_created
-                owner = last_created
+                species = last_created_species
+                owner = last_created_country
             }
             create_army = {
                 name = "Ephialtes Mindthralls"
                 type = "assault_army"
-                species = last_created
-                owner = last_created
+                species = last_created_species
+                owner = last_created_country
             }
             create_army = {
                 name = "Ephialtes Mindthralls"
                 type = "assault_army"
-                species = last_created
-                owner = last_created
+                species = last_created_species
+                owner = last_created_country
             }
 		}
         #Fleet Sabotage

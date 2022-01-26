@@ -12,7 +12,7 @@ planet_event = {
 	hide_window = yes
 	
 	trigger = {
-#		any_pop = {
+#		any_owned_pop = {
 #			has_modifier = pop_recently_conquered 
 #		}
 #		FROM = { NOT = { is_at_war_with = FROMFROM } }
@@ -31,7 +31,7 @@ planet_event = {
 #		}
 		if = {
 			limit = {
-				any_pop = {
+				any_owned_pop = {
 					has_modifier = pop_recently_conquered 
 				}
 #				FROM = { NOT = { is_at_war_with = FROMFROM } } #BBUGGED
@@ -39,7 +39,7 @@ planet_event = {
 			ROOT = { save_event_target_as = planet_occupied }
 			FROM = { save_event_target_as = planet_owner }
 			FROMFROM = { save_event_target_as = planet_conqueror }
-			every_country = {
+			every_playable_country = {
 				limit = {
 					is_country_type = default
 					has_country_edict = extra_information_sk
@@ -115,7 +115,7 @@ country_event = {
 						has_communications = FROMFROM.owner
 					}
 					NOT = { is_country = FROM }
-					NOT = { is_country = FROMFROM.owner }
+					NOT = { is_same_empire = FROMFROM.owner }
 				}
 				country_event = { id = information_events_sk.110 }
 			}
@@ -147,7 +147,7 @@ country_event = {
 								has_communications = FROMFROM.owner
 							}
 							NOT = { is_country = FROMFROM.controller }
-							NOT = { is_country = FROMFROM.owner }
+							NOT = { is_same_empire = FROMFROM.owner }
 							NOT = { is_at_war_with = FROMFROM.owner }
 						}
 						country_event = { id = information_events_sk.120 }
@@ -166,13 +166,13 @@ planet_event = {
 	immediate = {
 		if = {
 			limit = {
-				NOT = { ROOT.controller = { is_country = ROOT.owner } }
+				NOT = { ROOT.controller = { is_same_empire = ROOT.owner } }
 			}
 			planet_event = { id = information_events_sk.105 days = 1 }
 			else = {
 				if = {
 					limit = {
-						any_pop = {
+						any_owned_pop = {
 							has_modifier = pop_recently_conquered
 						}
 					}
@@ -182,7 +182,7 @@ planet_event = {
 						limit = {
 							has_country_edict = extra_information_sk
 							has_communications = ROOT.owner
-							NOT = { is_country = ROOT.owner }
+							NOT = { is_same_empire = ROOT.owner }
 						}					
 						country_event = { id = information_events_sk.131 } #CONQUERED
 					}
@@ -197,7 +197,7 @@ planet_event = {
 								limit = {
 									has_country_edict = extra_information_sk
 									has_communications = ROOT.owner
-									NOT = { is_country = ROOT.owner }
+									NOT = { is_same_empire = ROOT.owner }
 								}
 								country_event = { id = information_events_sk.121 } #LIBERATED
 							}		
@@ -559,10 +559,10 @@ planet_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		every_country = {
+		every_playable_country = {
 			limit = {
 				is_ai = no
-				NOT = { is_country = ROOT.owner }
+				NOT = { is_same_empire = ROOT.owner }
 				has_communications = ROOT.owner
 				has_country_edict = extra_information_sk
 				NOT = { has_country_flag = colonization_informed }	
@@ -585,7 +585,7 @@ planet_event = {
 				days = 1
 			}
 			ROOT = {
-				random_pop = {
+				random_owned_pop = {
 					save_event_target_as = first_pop
 				}
 			}
@@ -1324,12 +1324,12 @@ planet_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		every_country = {
+		every_playable_country = {
 			limit = {
 				is_ai = no
 				has_country_edict = extra_information_sk
 				has_communications = ROOT.owner
-				NOT = { is_country = ROOT.owner }
+				NOT = { is_same_empire = ROOT.owner }
 			}	
 			country_event = { id = information_events_sk.410 } #NOTIFICATION OF UPLIFTING
 		}
@@ -1389,13 +1389,15 @@ pop_event = {
 	}
 	
 	immediate = {
-		every_country = {
+		every_playable_country = {
 			limit = {
 				is_ai = no
 				has_country_edict = extra_information_sk
 				has_communications = ROOT.owner
-				NOT = { is_country = ROOT.owner }
-				NOT = { has_country_flag = purge_notified }
+				NOR = {
+					is_same_empire = ROOT.owner
+					has_country_flag = purge_notified
+				}
 			}	
 			set_timed_country_flag = {
 				flag = purge_notified

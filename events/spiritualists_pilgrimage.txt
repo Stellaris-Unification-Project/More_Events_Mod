@@ -41,10 +41,7 @@ country_event = {
 		has_global_flag = 35_years_passed
 		NOT = {	has_global_flag = pilgrimage_in_progress }			
 		any_neighbor_country = {
-			OR = {
-				has_ethic = "ethic_spiritualist"
-				has_ethic = "ethic_fanatic_spiritualist"
-			}
+			is_spiritualist = yes
 			NOR = {			
 				# Prevent the same country to do the pilgrimage again
 					has_country_flag = spiritualists_pilgrimage_ongoing
@@ -58,10 +55,7 @@ country_event = {
 		modifier = {
 			# 10 more time if xenophobic
 			factor = 10
-			OR = {
-				has_ethic = "ethic_xenophobe"
-				has_ethic = "ethic_fanatic_xenophobe"
-			}
+			is_xenophobe = yes
 		}
 	}
 
@@ -74,10 +68,7 @@ country_event = {
 		#}
 		random_neighbor_country = {
 			limit = {
-				OR = {
-					has_ethic = "ethic_spiritualist"
-					has_ethic = "ethic_fanatic_spiritualist"
-				}
+				is_spiritualist = yes
 				NOR = {			
 					# Prevent the same country to do the pilgrimage again
 						has_country_flag = spiritualists_pilgrimage_ongoing
@@ -93,7 +84,7 @@ country_event = {
 					#	is_owned_by = ROOT 
 					#} 
 				} 
-				random_planet = { 
+				random_system_planet = { 
 					limit = { 
 						is_owned_by = ROOT 
 					} 
@@ -106,19 +97,13 @@ country_event = {
 	option = {
 		name = "spiritualists_pilgrimage.2.a"
 		trigger = {
-			NOR = {				
-					has_ethic = "ethic_xenophobe"
-					has_ethic = "ethic_fanatic_xenophobe"
-			}
+			is_xenophobe = no
 		}
 				
 		if = {
 			limit = {
 				ROOT = {
-					OR = {
-						has_ethic = "ethic_xenophile"
-						has_ethic = "ethic_fanatic_xenophile"
-					}
+					is_xenophile = yes
 				}
 			}
 			hidden_effect = {
@@ -134,10 +119,7 @@ country_event = {
 				if = {
 					limit = {
 						ROOT = {
-							OR = {
-								has_ethic = "ethic_spiritualist"
-								has_ethic = "ethic_fanatic_spiritualist"
-							}
+							is_spiritualist = yes
 						}
 					}
 					hidden_effect = {
@@ -166,10 +148,7 @@ country_event = {
 	option = {
 		name = "spiritualists_pilgrimage.2.b"
 		trigger = {
-			OR = {
-				has_ethic = "ethic_xenophobe"
-				has_ethic = "ethic_fanatic_xenophobe"
-			}
+			is_xenophobe = yes
 		}
 		hidden_effect = {
 			random_list = {
@@ -445,7 +424,7 @@ country_event = {
 	option = {
 		name = "spiritualists_pilgrimage.10.a"
 		root = {
-			add_influence = 50
+			add_resource = { influence = 50 }
 		}
 	}
 }
@@ -545,10 +524,7 @@ country_event = {
 		if = {
 			limit = {
 				ROOT = {
-					OR = {
-						has_ethic = "ethic_xenophile"
-						has_ethic = "ethic_fanatic_xenophile"
-					}
+					is_xenophile = yes
 				}
 			}
 			hidden_effect = {
@@ -564,10 +540,7 @@ country_event = {
 				if = {
 					limit = {
 						ROOT = {
-							OR = {
-								has_ethic = "ethic_spiritualist"
-								has_ethic = "ethic_fanatic_spiritualist"
-							}
+							is_spiritualist = yes
 						}
 					}
 					hidden_effect = {
@@ -615,7 +588,7 @@ country_event = {
 	option = {
 		name = "spiritualists_pilgrimage.14.a"
 		root = {
-			add_influence = 50
+			add_resource = { influence = 50 }
 		}
 	}
 }

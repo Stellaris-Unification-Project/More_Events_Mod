@@ -38,7 +38,7 @@ special_project = {
 	event_scope = planet_event
 	
 	on_success = {
-        every_country = {
+        every_playable_country = {
             limit = { is_ai = no }
             country_event = { id = mem_brainworm_event.6 }
             country_event = { id = mem_brainworm_event.7 days = 10 }

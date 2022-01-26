@@ -38,10 +38,7 @@ country_event = {
 	option = {
 		name = squid.1.xenophile
 			trigger = {
-				OR = {
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
-				}
+				is_xenophile = yes
 			}
 			event_target:ruthcap = {	
 				add_opinion_modifier = {
@@ -51,11 +48,8 @@ country_event = {
 				}				
 			hidden_effect = { 
 				If = { 
-					limit = { 
-						OR = {
-							has_ethic = ethic_spiritualist
-							has_ethic = ethic_fanatic_spiritualist
-						 }
+					limit = {
+						is_spiritualist = yes
 					}
 					country_event = {
 						id = squid.4
@@ -90,8 +84,7 @@ country_event = {
 				If = { 
 					limit = { 
 						OR = { 
-							has_ethic = ethic_spiritualist
-							has_ethic = ethic_fanatic_spiritualist
+							is_spiritualist = yes
 							 } 
 						}
 					country_event = {
@@ -116,10 +109,7 @@ country_event = {
 				has_ethic = ethic_fanatic_individualist
 				has_ethic = ethic_individualist
 			}
-			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist			
-			}
+			is_materialist = yes
 		}
 		event_target:ruthcap = {	
 			add_opinion_modifier = {
@@ -138,10 +128,7 @@ country_event = {
 	option = {
 		name = squid.1.xenophobe
 			trigger = {
-						OR = {
-							has_ethic = ethic_xenophobe
-							has_ethic = ethic_fanatic_xenophobe
-						}
+						is_xenophobe = yes
 					}
 			event_target:ruthcap = {	
 			add_opinion_modifier = {
@@ -162,8 +149,7 @@ hidden_effect = {
 				If = { 
 					limit = { 
 						OR = { 
-							has_ethic = ethic_spiritualist
-							has_ethic = ethic_fanatic_spiritualist
+							is_spiritualist = yes
 							 } 
 						}
 					country_event = {
@@ -202,10 +188,7 @@ country_event = {
 			}
 	option = {
 		trigger = {
-			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
-				}
+			is_materialist = yes
 			}
 		name = squid.2.fascinated
 		add_society_research = 50
@@ -288,17 +271,11 @@ country_event = {
 	option = {
 		name = squid.5.xenophile
 			trigger = {
-						OR = {
-							has_ethic = ethic_xenophile
-							has_ethic = ethic_fanatic_xenophile
-							}
+						is_xenophile = yes
 						}
 			every_owned_pop = {
-				limit = { 
-					OR = {
-						has_ethic = ethic_xenophile
-						has_ethic = ethic_fanatic_xenophile
-						}
+				limit = {
+					is_xenophile = yes
 					}
 				add_modifier = {
 					modifier = pleased_by_custom_event
@@ -306,11 +283,8 @@ country_event = {
 					}
 				}
 			every_owned_pop = {
-				limit = { 
-					OR = {
-						has_ethic = ethic_xenophobe
-						has_ethic = ethic_fanatic_xenophobe
-						}
+				limit = {
+					is_xenophobe = yes
 					}
 				add_modifier = {
 					modifier = displeased_by_custom_event
@@ -327,17 +301,11 @@ country_event = {
 	option = {
 		name = squid.5.xenophobe
 			trigger = {
-						OR = {
-							has_ethic = ethic_xenophobe
-							has_ethic = ethic_fanatic_xenophobe
-							}
+						is_xenophobe = yes
 						}
 			every_owned_pop = {
-				limit = { 
-					OR = {
-						has_ethic = ethic_xenophobe
-						has_ethic = ethic_fanatic_xenophobe
-						}
+				limit = {
+					is_xenophobe = yes
 					}
 				add_modifier = {
 					modifier = pleased_by_custom_event
@@ -347,8 +315,7 @@ country_event = {
 			every_owned_pop = {
 				limit = { 
 					OR = {
-						has_ethic = ethic_xenophile
-						has_ethic = ethic_fanatic_xenophile
+						is_xenophile = yes
 						has_ethic = ethic_individualist
 						has_ethic = ethic_fanatic_individualist
 						}
@@ -391,10 +358,7 @@ country_event = {
 	option = {
 	name = squid.5.mercenary
 		trigger = {
-					OR = {
-						has_ethic = ethic_militarist
-						has_ethic = ethic_fanatic_militarist
-					}
+					is_militarist = yes
 					OR = { 
 						has_ethic = ethic_individualist
 						has_ethic = ethic_fanatic_individualist
@@ -417,10 +381,7 @@ country_event = {
 	option = {
 	name = squid.5.peaceful
 		trigger = {
-					OR = {
-						has_ethic = ethic_pacifist
-						has_ethic = ethic_fanatic_pacifist
-					}
+					is_pacifist = yes
 				}
 		event_target:peacefultraders = {	
 				add_opinion_modifier = {
@@ -450,8 +411,8 @@ country_event = {
 	
 	option = {
 		name = squid.6.good
-		add_influence = 50
-		add_energy = 400
+		add_resource = { influence = 50 }
+		add_resource = { energy = 400 }
 		}
 	}
 	
@@ -500,11 +461,11 @@ country_event = {
 			closest_system = { 
 				limit = { 
 					is_owned_by = ROOT 
-					any_planet = { 
+					any_system_planet = { 
 						is_owned_by = ROOT 
 					} 
 				} 
-				random_planet = { 
+				random_system_planet = { 
 					limit = { 
 						is_owned_by = ROOT 
 					} 
@@ -514,34 +475,23 @@ country_event = {
 		}
 		IF = {
 			limit = {
-				OR = {
-					has_ethic = ethic_spiritualist
-					has_ethic = ethic_fanatic_spiritualist
-				}
-				OR = {
-					has_ethic = ethic_militarist
-					has_ethic = ethic_fanatic_militarist
-				}
+				is_spiritualist = yes
+				is_militarist = yes
 			}
 			set_country_flag = hegimpcrusader
 			ELSE = {
 				IF = {
 					limit = {
 						OR = {
-							has_ethic = ethic_militarist
-							has_ethic = ethic_fanatic_militarist
-							has_ethic = ethic_xenophobe
-							has_ethic = ethic_fanatic_xenophobe
+							is_militarist = yes
+							is_xenophobe = yes
 						}
 					}
 					set_country_flag = hegimpmilitarist
 					ELSE = {
 						IF = {
 							limit = {
-								OR = {
-									has_ethic = ethic_spiritualist
-									has_ethic = ethic_fanatic_spiritualist
-								}
+								is_spiritualist = yes
 							}
 							set_country_flag = hegimpspiritualist
 							ELSE = {
@@ -693,10 +643,7 @@ country_event = {
 	option = {
 		name = "squid.8.xenophile"
 		trigger = {
-			OR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-			}
+			is_xenophile = yes
 		}
 		event_target:tour_location = {
 			every_owned_pop = {
@@ -735,10 +682,7 @@ country_event = {
 	option = {
 		name = "squid.8.xenophobe"
 		trigger = {
-			OR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-			}
+			is_xenophobe = yes
 		}
 		event_target:tour_location = {
 			every_owned_pop = {
@@ -816,10 +760,7 @@ country_event = {
 				has_ethic = ethic_individualist
 				has_ethic = ethic_fanatic_individualist
 			}
-			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
-			}
+			is_materialist = yes
 		}
 		event_target:tour_location = {
 			every_owned_pop = {
@@ -862,14 +803,8 @@ country_event = {
 	option = {
 		name = "squid.8.religiousdogma"
 		trigger = {
-			OR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-			}
-			OR = {
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
-			}
+			is_xenophobe = yes
+			is_spiritualist = yes
 		}
 		event_target:tour_location = {
 			every_owned_pop = {
@@ -964,10 +899,7 @@ country_event = {
 				has_ethic = ethic_collectivist
 				has_ethic = ethic_fanatic_collectivist
 			}
-			OR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-			}
+			is_xenophile = yes
 		}
 		every_owned_pop = {
 				limit = { 
@@ -1004,10 +936,7 @@ country_event = {
 	option = {
 		name = "squid.8.woodstock"
 		trigger = {
-			OR = {
-				has_ethic = ethic_pacifist
-				has_ethic = ethic_fanatic_pacifist
-			}
+			is_pacifist = yes
 		}
 		event_target:tour_location = {
 			every_owned_pop = {
@@ -1057,7 +986,7 @@ country_event = {
 	}
 	option = {
 		name = "squid.8.default"
-		add_influence = 50
+		add_resource = { influence = 50 }
 		hidden_effect = { 
 			country_event = { 
 				id = squid.9 

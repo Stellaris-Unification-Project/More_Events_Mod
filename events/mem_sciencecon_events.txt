@@ -58,12 +58,10 @@ country_event = {
 
   trigger = {
     is_ai = no
-    NOT = {
-      OR = {        
+    NOR = {        
         has_country_flag = mem_sciencecon_denied
         has_country_flag = mem_sciencecon_started
-      }
-    }
+}
   }
 
   immediate = {
@@ -86,8 +84,8 @@ country_event = {
       }
     }
 
-    add_energy = @mem_sciencecon_cost_energy_neg
-    add_minerals = @mem_sciencecon_cost_minerals_neg
+    add_resource = { energy = @mem_sciencecon_cost_energy_neg }
+    add_resource = { minerals = @mem_sciencecon_cost_minerals_neg }
         
     hidden_effect = {
       country_event = {id = mem_sciencecon_event.2 days = @mem_sciencecon_prep_time}
@@ -133,9 +131,9 @@ country_event = {
       num_communications > 0
     }
     #Subtract the values NEGative
-    add_energy = @mem_sciencecon_cost_energy_neg
-    add_minerals = @mem_sciencecon_cost_minerals_neg
-    add_influence = @mem_sciencecon_cost_influence_neg
+    add_resource = { energy = @mem_sciencecon_cost_energy_neg }
+    add_resource = { minerals = @mem_sciencecon_cost_minerals_neg }
+    add_resource = { influence = @mem_sciencecon_cost_influence_neg }
 
     hidden_effect = {
       set_country_flag = mem_sciencecon_attending
@@ -322,7 +320,7 @@ country_event = {
   }
   immediate = {
     save_event_target_as = invite_sender
-    every_country = {
+    every_playable_country = {
       limit = {
         is_country_type = default
         has_communications = ROOT
@@ -404,10 +402,8 @@ country_event = {
     name = mem_sciencecon.8.b
     trigger = {
       NOT = {
-        has_ethic = ethic_xenophobe
-        has_ethic = ethic_fanatic_xenophobe
-        has_ethic = ethic_spiritualist
-        has_ethic = ethic_fanatic_spiritualist
+        is_xenophobe = yes
+        is_spiritualist = yes
       }
     }
     ai_chance = {
@@ -426,8 +422,7 @@ country_event = {
     name = mem_sciencecon.8.c
     trigger = {
       OR = {
-        has_ethic = ethic_xenophobe
-        has_ethic = ethic_fanatic_xenophobe
+        is_xenophobe = yes
       }
     }
   }
@@ -436,8 +431,7 @@ country_event = {
     name = mem_sciencecon.8.d
     trigger = {
       OR = {
-        has_ethic = ethic_spiritualist
-        has_ethic = ethic_fanatic_spiritualist
+        is_spiritualist = yes
       }
     }
   }
@@ -841,7 +835,7 @@ country_event = {
     remove_country_flag = mem_sciencecon_someone_accepted
 
     #Clean up other countries flags.
-    every_country = {
+    every_playable_country = {
       limit = {
         is_country_type = default
       }
