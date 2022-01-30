@@ -26,8 +26,8 @@ country_event = {
 		NOR = {
 			has_country_flag = mem_has_had_terminally_ill_ruler
 			has_global_flag = dynamic_political_events_active
+			end_game_years_passed >= 0
 		}
-		NOT = { end_game_years_passed >= 0 }
 		OR = {
 			has_authority = auth_imperial
 			has_authority = auth_dictatorial
