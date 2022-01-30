@@ -51,8 +51,7 @@ ship_event = {
         trigger = {
             owner = {
                 OR = {
-                    has_ethic = ethic_xenophile
-                    has_ethic = ethic_fanatic_xenophile
+                    is_xenophile = yes
                     has_valid_civic = civic_machine_servitor
                 }
             }
@@ -102,8 +101,7 @@ ship_event = {
         trigger = {
             owner = {
                 OR = {
-                    has_ethic = ethic_xenophobe
-                    has_ethic = ethic_fanatic_xenophobe
+                    is_xenophobe = yes
                 }
             }
         }
@@ -377,8 +375,7 @@ country_event = {
 
         trigger = {
             OR = {
-                has_ethic = ethic_xenophile
-                has_ethic = ethic_fanatic_xenophile
+                is_xenophile = yes
             }
         }
 
@@ -395,8 +392,7 @@ country_event = {
 
         trigger = {
             OR = {
-                has_ethic = ethic_materialist
-                has_ethic = ethic_fanatic_materialist
+                is_materialist = yes
             }
         }
 

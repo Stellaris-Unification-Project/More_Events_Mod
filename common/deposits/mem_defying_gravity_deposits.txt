@@ -59,8 +59,10 @@ d_mem_defying_gravity_blimp_deposit = {
 			exists = owner
 			owner = {
 				is_regular_empire = yes
-				NOT = { has_authority = auth_corporate }
-				NOT = { has_valid_civic = civic_shared_burden }
+				NOR = {
+					has_authority = auth_corporate
+					has_valid_civic = civic_shared_burden
+				}
 			}
 		}
 		job_culture_worker_add = 1

@@ -167,10 +167,7 @@ country_event = {
 				has_origin = origin_mem_fainthearted
 				FROM = {
 					is_country_type = default
-					NOR = {
-						has_ethic = ethic_pacifist
-						has_ethic = ethic_fanatic_pacifist
-					}
+					is_pacifist = no
 					OR = {
 						has_ethic = ethic_fanatic_militarist
 						has_ethic = ethic_militarist
@@ -194,10 +191,7 @@ country_event = {
 					has_origin = origin_mem_fainthearted
 				}
 				is_country_type = default
-				NOR = {
-					has_ethic = ethic_pacifist
-					has_ethic = ethic_fanatic_pacifist
-				}
+				is_pacifist = no
 				OR = {
 					has_ethic = ethic_fanatic_militarist
 					has_ethic = ethic_militarist

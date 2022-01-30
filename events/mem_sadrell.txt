@@ -922,7 +922,7 @@ country_event = {
             every_system_planet = {
                 limit = {
                     exists = owner
-                    owner = { is_same_value = root }
+                    is_owned_by = root
                 }
                 set_owner = event_target:newcomer_country
                 set_planet_flag = mem_sadrell_moved_in
@@ -1116,20 +1116,16 @@ country_event = {
     option = {
         name = mem_sadrell.112.mil
         exclusive_trigger = {
-            has_ethic = ethic_militarist
-            has_ethic = ethic_fanatic_militarist
-            has_ethic = ethic_xenophobe
-            has_ethic = ethic_fanatic_xenophobe
+            is_militarist = yes
+            is_xenophobe = yes
         }
     }
 
     option = {
         name = mem_sadrell.112.pac
         exclusive_trigger = {
-            has_ethic = ethic_pacifist
-            has_ethic = ethic_fanatic_pacifist
-            has_ethic = ethic_xenophile
-            has_ethic = ethic_fanatic_xenophile
+            is_pacifist = yes
+            is_xenophile = yes
         }
     }
 }
@@ -1264,7 +1260,7 @@ country_event = {
             every_system_planet = {
                 limit = {
                     exists = owner
-                    owner = { is_same_value = root }
+                    is_owned_by = root
                 }
                 set_owner = event_target:newcomer_country
                 set_planet_flag = mem_sadrell_moved_in
@@ -1407,7 +1403,7 @@ country_event = {
             every_system_planet = {
                 limit = {
                     exists = owner
-                    owner = { is_same_value = root }
+                    is_owned_by = root
                 }
                 set_owner = event_target:newcomer_country
                 set_planet_flag = mem_sadrell_moved_in
@@ -1858,7 +1854,7 @@ country_event = {
             every_system_planet = {
                 limit = {
                     exists = owner
-                    owner = { is_same_value = root }
+                    is_owned_by = root
                 }
                 set_owner = event_target:newcomer_country
                 set_planet_flag = mem_sadrell_moved_in
@@ -2395,10 +2391,8 @@ country_event = {
             OR = {
                 has_valid_civic = civic_machine_servitor
                 NOR = {
-                    has_ethic = ethic_xenophobe
-                    has_ethic = ethic_fanatic_xenophobe
-                    has_ethic = ethic_militarist
-                    has_ethic = ethic_fanatic_militarist
+                    is_xenophobe = yes
+                    is_militarist = yes
                     has_valid_civic = civic_hive_devouring_swarm
                     has_authority = auth_machine_intelligence
                 }
@@ -2411,10 +2405,8 @@ country_event = {
 
         trigger = {
             OR = {
-                has_ethic = ethic_xenophobe
-                has_ethic = ethic_fanatic_xenophobe
-                has_ethic = ethic_militarist
-                has_ethic = ethic_fanatic_militarist
+                is_xenophobe = yes
+                is_militarist = yes
             }
         }
     }
@@ -2553,7 +2545,7 @@ planet_event = {
                         level > none
                         system = prev
                     }
-                    NOT = { is_same_value = prev.space_owner }
+                    NOT = { is_same_empire = prev.space_owner }
                 }
                 country_event = { id = mem_sadrell.302 }
             }
@@ -3135,11 +3127,9 @@ country_event = {
 
         exclusive_trigger = {
             OR = {
-                has_ethic = ethic_pacifist
-                has_ethic = ethic_fanatic_pacifist
+                is_pacifist = yes
                 has_valid_civic = civic_machine_servitor
-                has_ethic = ethic_xenophile
-                has_ethic = ethic_fanatic_xenophile
+                is_xenophile = yes
             }
             FROM = { has_country_flag = mem_sadrell_country_regular }
         }
@@ -3150,8 +3140,7 @@ country_event = {
 
         exclusive_trigger = {
             OR = {
-                has_ethic = ethic_militarist
-                has_ethic = ethic_fanatic_militarist
+                is_militarist = yes
             }
             FROM = { has_country_flag = mem_sadrell_country_regular }
         }
@@ -3162,8 +3151,7 @@ country_event = {
 
         exclusive_trigger = {
             OR = {
-                has_ethic = ethic_authoritarian
-                has_ethic = ethic_fanatic_authoritarian
+                is_authoritarian = yes
             }
             FROM = { has_country_flag = mem_sadrell_country_regular }
         }

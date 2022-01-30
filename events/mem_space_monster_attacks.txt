@@ -76,8 +76,7 @@ planet_event = {
 	immediate = {
 		set_planet_flag = mem_space_monster_attack_target
 		solar_system  = {
-			random_system_planet = {
-				limit = { is_star = yes }
+			star = {
 				create_ambient_object = {
 					type = "mem_dummy_object"
 					location = THIS

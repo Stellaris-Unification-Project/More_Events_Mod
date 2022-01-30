@@ -17,8 +17,10 @@ planet_event = {
 	}
 	
 	trigger = {
-		NOT = { has_global_flag = mem_synthetic_sun }
-		NOT = { has_planet_flag = colony_event }
+		NOR = {
+			has_global_flag = mem_synthetic_sun
+			has_planet_flag = colony_event
+		}
 		exists = owner
 		owner = {
 			OR = {

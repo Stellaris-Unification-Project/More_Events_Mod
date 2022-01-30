@@ -34,7 +34,7 @@ planet_event = {
 		owner = { is_ai = no }
 		NOT = { has_planet_flag = mem_accelerated_evolution_flag } 
 		exists = controller
-		controller = { is_same_value = root.owner }
+		controller = { is_same_empire = root.owner }
 		has_ground_combat = no
 		num_pops > 0
 		is_capital = no

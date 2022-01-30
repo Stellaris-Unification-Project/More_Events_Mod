@@ -271,10 +271,10 @@ ship_event = {
         }
 
         hidden_effect = {
-            every_country = {
+            every_playable_country = {
                 limit = {
                     has_special_project = MEM_ARK_PROJECT
-                    NOT = { is_same_value = root.owner }
+                    NOT = { is_same_empire = root.owner }
                 }
                 abort_special_project = {
                     type = MEM_ARK_PROJECT
@@ -312,11 +312,7 @@ ship_event = {
         custom_tooltip = mem_ark.100.a.delayed.tooltip
 
         trigger = {
-            event_target:the_planet = {
-                owner = {
-                    is_same_value = root.owner
-                }
-            }
+            event_target:the_planet = { is_owned_by = root.owner }
         }
 
         ai_chance = {
@@ -683,8 +679,7 @@ country_event = {
 
         exclusive_trigger = {
             OR = {
-                has_ethic = ethic_materialist
-                has_ethic = ethic_fanatic_materialist
+                is_materialist = yes
             }
         }
     }
@@ -694,8 +689,7 @@ country_event = {
 
         exclusive_trigger = {
             OR = {
-                has_ethic = ethic_xenophobe
-                has_ethic = ethic_fanatic_xenophobe
+                is_xenophobe = yes
             }
         }
     }
@@ -732,8 +726,7 @@ country_event = {
             OR = {
                 has_ethic = ethic_fanatic_militarist
                 has_ethic = ethic_militarist
-                has_ethic = ethic_materialist
-                has_ethic = ethic_fanatic_materialist
+                is_materialist = yes
             }
             is_pacifist = no
         }
@@ -804,10 +797,8 @@ country_event = {
 
         exclusive_trigger = {
             OR = {
-                has_ethic = ethic_militarist
-                has_ethic = ethic_fanatic_militarist
-                has_ethic = ethic_xenophobe
-                has_ethic = ethic_fanatic_xenophobe
+                is_militarist = yes
+                is_xenophobe = yes
             }
         }
     }
@@ -817,8 +808,7 @@ country_event = {
 
         exclusive_trigger = {
             OR = {
-                has_ethic = ethic_materialist
-                has_ethic = ethic_fanatic_materialist
+                is_materialist = yes
             }
         }
     }
@@ -864,8 +854,7 @@ country_event = {
 
         exclusive_trigger = {
             OR = {
-                has_ethic = ethic_materialist
-                has_ethic = ethic_fanatic_materialist
+                is_materialist = yes
             }
         }
     }
@@ -875,8 +864,7 @@ country_event = {
 
         exclusive_trigger = {
             OR = {
-                has_ethic = ethic_xenophile
-                has_ethic = ethic_fanatic_xenophile
+                is_xenophile = yes
             }
         }
     }

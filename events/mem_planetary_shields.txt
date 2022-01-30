@@ -1364,7 +1364,7 @@ event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		random_country = {
+		random_playable_country = {
 			limit = {
 				is_ai = no
 			}

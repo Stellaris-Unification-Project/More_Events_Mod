@@ -59,11 +59,7 @@ country_event = {
 							OR = {
 								solar_system = {
 									has_owner = yes
-									NOT = {
-										owner = {
-											is_same_value = root
-										}
-									}
+									NOT = { is_owned_by = root }
 								}
 								habitable_planet = no
 							}

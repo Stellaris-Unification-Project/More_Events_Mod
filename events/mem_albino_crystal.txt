@@ -349,7 +349,7 @@ planet_event = {
             }
             mem_albino_crystal_send_child_away = yes
             mem_albino_crystal_send_papa_away = yes
-            every_country = {
+            every_playable_country = {
                 limit = {
                     is_ai = no
                     OR = {
@@ -357,7 +357,7 @@ planet_event = {
                             level >= medium
                             system = root.solar_system
                         }
-                        is_same_value = root.solar_system.space_owner
+                        is_same_empire = root.solar_system.space_owner
                     }
                 }
                 country_event = {
@@ -368,7 +368,7 @@ planet_event = {
         # If papa is gone and asteroid is mined
         ELSE_IF = {
             limit = { 
-                exists = solar_system.space_owner
+                has_owner = yes
                 has_mining_station = yes
             }
             solar_system.space_owner = {
@@ -410,7 +410,7 @@ planet_event = {
                 }
             }
             mem_albino_crystal_send_child_away = yes
-            every_country = {
+            every_playable_country = {
                 limit = {
                     is_ai = no
                     OR = {
@@ -418,7 +418,7 @@ planet_event = {
                             level >= medium
                             system = root.solar_system
                         }
-                        is_same_value = root.solar_system.space_owner
+                        is_same_empire = root.solar_system.space_owner
                     }
                 }
                 country_event = {

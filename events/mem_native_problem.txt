@@ -20,8 +20,10 @@ planet_event = {
         original_owner = yes
         owner = {
             is_ai = no
-            NOT = { has_country_flag = mem_native_problem }
-            NOT = { has_ethic = ethic_gestalt_consciousness }
+            NOR = {
+	has_country_flag = mem_native_problem
+	has_ethic = ethic_gestalt_consciousness
+}
             species = {
                 NOR = {
                     is_species_class = ROBOT
@@ -142,12 +144,9 @@ planet_event = {
         trigger = {
             owner = {
                 OR = {
-                    has_ethic = ethic_militarist
-                    has_ethic = ethic_fanatic_militarist
-                    has_ethic = ethic_xenophobe
-                    has_ethic = ethic_fanatic_xenophobe
-                    has_ethic = ethic_authoritarian
-                    has_ethic = ethic_fanatic_authoritarian
+                    is_militarist = yes
+                    is_xenophobe = yes
+                    is_authoritarian = yes
                 }
             }
         }
@@ -215,12 +214,9 @@ planet_event = {
         trigger = {
             owner = {
                 OR = {
-                    has_ethic = ethic_pacifist
-                    has_ethic = ethic_fanatic_pacifist
-                    has_ethic = ethic_egalitarian
-                    has_ethic = ethic_fanatic_egalitarian
-                    has_ethic = ethic_xenophile
-                    has_ethic = ethic_fanatic_xenophile
+                    is_pacifist = yes
+                    is_egalitarian = yes
+                    is_xenophile = yes
                 }
             }
         }
@@ -283,8 +279,7 @@ planet_event = {
         trigger = {
             owner = {
                 OR = {
-                    has_ethic = ethic_authoritarian
-                    has_ethic = ethic_fanatic_authoritarian
+                    is_authoritarian = yes
                 }
             }
         }
@@ -304,10 +299,7 @@ planet_event = {
 
         trigger = {
             owner = {
-                NOR = {
-                    has_ethic = ethic_authoritarian
-                    has_ethic = ethic_fanatic_authoritarian
-                }
+                is_authoritarian = no
             }
         }
 

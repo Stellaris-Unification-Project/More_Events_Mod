@@ -21,7 +21,7 @@ event = {
 
 	trigger = {
 		#disable in multiplayers and for gestalts
-		any_country = {
+		any_playable_country = {
 			is_ai = no
 			NOR = {
 				has_ethic = ethic_gestalt_consciousness
@@ -39,7 +39,7 @@ event = {
 		random_list = {
 			2 = { } #too bad
 			1 = {
-				random_country = {
+				random_playable_country = {
 					limit = {
 						is_ai = no
 					}
@@ -621,7 +621,6 @@ country_event = {
 			name = "Immortals"
 			class = random_non_machine
 			immortal = yes
-			pops_can_reproduce = no
 			
 			traits = {
 				trait = trait_psionic
@@ -893,10 +892,7 @@ country_event = {
 			}
 			if = {
 				limit = {
-					NOR = {
-						has_ethic = ethic_authoritarian
-						has_ethic = ethic_fanatic_authoritarian
-					}
+					is_authoritarian = no
 				}
 				shift_ethic = ethic_authoritarian
 			}
@@ -1200,7 +1196,7 @@ fleet_event = {
 	trigger = {
 		has_fleet_flag = mem_neochadanus_carrying_fleet
 		solar_system = {
-			is_same_value = root.owner.capital_scope.solar_system
+			is_same_empire = root.owner.capital_scope.solar_system
 		}
 	}
 	
@@ -1443,7 +1439,7 @@ planet_event = {
 						while = {
 							limit = {
 								any_system_planet = {
-									NOT = { has_anomaly = yes }
+									has_anomaly = no
 									NOR = {
 										has_planet_flag = megastructure
 										has_planet_flag = has_megastructure
@@ -1470,7 +1466,7 @@ planet_event = {
 							
 							random_system_planet = {
 								limit = { #this is the conditions for building a habitat in the habitat file
-									NOT = { has_anomaly = yes }
+									has_anomaly = no
 									NOR = {
 										has_planet_flag = megastructure
 										has_planet_flag = has_megastructure
@@ -2094,10 +2090,7 @@ country_event = {
 					is_crisis_faction = yes
 					
 					AND = {
-						OR = {
-							is_country_type = default
-							is_country_type = awakened_fallen_empire
-						}
+						is_country_type_with_subjects = yes
 						has_communications = root
 						relative_power = {
 							who = root
@@ -2648,8 +2641,10 @@ country_event = {
 	trigger = {
 		has_modifier = mem_lost_emperor_fount_of_knowledge_modifier
 		has_event_chain = "l_cluster_chain"
-		NOT = { has_country_flag = mem_neochadanus_clue }
-		NOT = { has_country_flag = completed_lcluster_chain }
+		NOR = {
+			has_country_flag = mem_neochadanus_clue
+			has_country_flag = completed_lcluster_chain
+		}
 	}
 
 	mean_time_to_happen = {

@@ -139,8 +139,8 @@ namespace = mem_science_convention
 	
 		# ai_chance = { factor = 3 }
 	
-		# add_energy = @mem_sciencecon_cost_energy_neg
-		# add_minerals = @mem_sciencecon_cost_minerals_neg
+		# add_resource = { energy = @mem_sciencecon_cost_energy_neg }
+		# add_resource = { minerals = @mem_sciencecon_cost_minerals_neg }
 			
 		# hidden_effect = {
 			# country_event = {id = mem_science_convention.2 days = @mem_sciencecon_prep_time}
@@ -186,9 +186,9 @@ namespace = mem_science_convention
 			# num_communications > 0
 		# }
 		##Subtract the values NEGative
-		# add_energy = @mem_sciencecon_cost_energy_neg
-		# add_minerals = @mem_sciencecon_cost_minerals_neg
-		# add_influence = @mem_sciencecon_cost_influence_neg
+		# add_resource = { energy = @mem_sciencecon_cost_energy_neg }
+		# add_resource = { minerals = @mem_sciencecon_cost_minerals_neg }
+		# add_resource = { influence = @mem_sciencecon_cost_influence_neg }
 
 		# ai_chance = {
 			# factor = 5

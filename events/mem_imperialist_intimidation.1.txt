@@ -77,7 +77,7 @@
 # 			closest_system = { 
 # 				limit = { 
 # 					is_owned_by = ROOT 
-# 					any_planet = { 
+# 					any_system_planet = { 
 # 						is_owned_by = ROOT 
 # 					} 
 # 				} 

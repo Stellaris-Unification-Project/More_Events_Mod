@@ -497,7 +497,7 @@ mem_broken_clock_kill_invaders = {
                         limit = { 
                             exists = solar_system.starbase 
                             solar_system.starbase = {
-                                owner = { is_same_value = root }
+                                is_owned_by = root
                             }
                         }
                         solar_system.starbase = {
@@ -538,7 +538,7 @@ mem_broken_clock_kill_invaders = {
                         limit = { 
                             exists = starbase 
                             starbase = {
-                                owner = { is_same_value = root }
+                                is_owned_by = root
                             }
                         }
                         starbase = {
@@ -576,7 +576,7 @@ mem_broken_clock_kill_invaders = {
                         limit = { 
                             exists = starbase 
                             starbase = {
-                                owner = { is_same_value = root }
+                                is_owned_by = root
                             }
                         }
                         starbase = {
@@ -598,7 +598,7 @@ mem_broken_clock_kill_invaders = {
                         limit = { 
                             exists = starbase 
                             starbase = {
-                                owner = { is_same_value = root }
+                                is_owned_by = root
                             }
                         }
                         starbase = {

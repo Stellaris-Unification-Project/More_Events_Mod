@@ -42,8 +42,8 @@ resolution_mem_galactic_focus_crisis_vazurans_1 = {
 		NOR = {
 			has_global_flag = mem_vazurans_disabled
 			has_global_flag = mem_vazurans_finished
+			has_global_flag = galactic_focus_crisis_vazurans_1
 		}
-		NOT = { has_global_flag = galactic_focus_crisis_vazurans_1 }
 	}
 
 	active = { # Resolution only in effect while this trigger is met
@@ -144,8 +144,8 @@ resolution_mem_galactic_focus_crisis_vazurans_2 = {
 		NOR = {
 			has_global_flag = mem_vazurans_disabled
 			has_global_flag = mem_vazurans_finished
+			has_global_flag = galactic_focus_crisis_vazurans_2
 		}
-		NOT = { has_global_flag = galactic_focus_crisis_vazurans_2 }
 		is_active_resolution = "resolution_mem_galactic_focus_crisis_vazurans_1"
 	}
 

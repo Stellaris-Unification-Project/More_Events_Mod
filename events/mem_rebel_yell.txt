@@ -94,8 +94,10 @@ country_event = {
             random_system_planet = {
                 limit = {
                     is_star = no
-                    NOT = { has_planet_flag = mem_rebel_yell_broken_city }
-                    NOT = { is_planet_class = pc_gas_giant }
+                    NOR = {
+	has_planet_flag = mem_rebel_yell_broken_city
+	is_planet_class = pc_gas_giant
+}
                 }
                 save_event_target_as = the_planet
             }
@@ -402,11 +404,7 @@ country_event = {
         default_hide_option = yes
 
         trigger = {
-            NOR = {
-                has_valid_civic = civic_fanatic_purifiers
-                has_valid_civic = civic_machine_terminator
-                has_valid_civic = civic_hive_devouring_swarm
-            }
+            is_homicidal = no
         }
 
         hidden_effect = {
@@ -429,11 +427,7 @@ country_event = {
         name = mem_rebel_yell.8.b
 
         trigger = {
-            NOR = {
-                has_valid_civic = civic_fanatic_purifiers
-                has_valid_civic = civic_machine_terminator
-                has_valid_civic = civic_hive_devouring_swarm
-            }
+            is_homicidal = no
         }
 
         hidden_effect = {
@@ -521,11 +515,7 @@ country_event = {
 
         trigger = {
             has_country_flag = mem_vazurans_met
-            NOR = {
-                has_valid_civic = civic_fanatic_purifiers
-                has_valid_civic = civic_machine_terminator
-                has_valid_civic = civic_hive_devouring_swarm
-            }
+            is_homicidal = no
         }
     }
 }

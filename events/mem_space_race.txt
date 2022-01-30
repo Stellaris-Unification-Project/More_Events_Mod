@@ -43,7 +43,7 @@ country_event = {
 		set_country_flag = mem_space_race_host
 		save_global_event_target_as = mem_space_race_host
 		hidden_effect = {
-			every_country = {
+			every_playable_country = {
 				limit = {
 					is_country_type = default
 					has_communications = root
@@ -892,8 +892,10 @@ country_event = {
 			every_country = {
 				limit = {
 					has_country_flag = mem_space_race_former_participant
-					NOT = { is_same_value = event_target:mem_space_race_host }
-					NOT = { is_same_value = prev }
+					NOR = {
+						is_same_value = event_target:mem_space_race_host
+						is_same_value = prev
+					}
 				}
 				add_intel = {
 					who = prev
@@ -982,10 +984,8 @@ country_event = {
 			OR = {
 				has_ethic = ethic_fanatic_xenophobe
 				has_ethic = ethic_xenophobe
-				has_ethic = ethic_authoritarian
-				has_ethic = ethic_fanatic_authoritarian
-				has_ethic = ethic_militarist
-				has_ethic = ethic_fanatic_militarist
+				is_authoritarian = yes
+				is_militarist = yes
 			}
 		}
 		
@@ -1078,10 +1078,8 @@ country_event = {
 			OR = {
 				has_ethic = ethic_fanatic_xenophobe
 				has_ethic = ethic_xenophobe
-				has_ethic = ethic_authoritarian
-				has_ethic = ethic_fanatic_authoritarian
-				has_ethic = ethic_militarist
-				has_ethic = ethic_fanatic_militarist
+				is_authoritarian = yes
+				is_militarist = yes
 			}
 		}
 	}
@@ -1161,10 +1159,8 @@ country_event = {
 			OR = {
 				has_ethic = ethic_fanatic_xenophobe
 				has_ethic = ethic_xenophobe
-				has_ethic = ethic_authoritarian
-				has_ethic = ethic_fanatic_authoritarian
-				has_ethic = ethic_militarist
-				has_ethic = ethic_fanatic_militarist
+				is_authoritarian = yes
+				is_militarist = yes
 			}
 		}
 		
@@ -1256,10 +1252,8 @@ country_event = {
 			OR = {
 				has_ethic = ethic_fanatic_xenophobe
 				has_ethic = ethic_xenophobe
-				has_ethic = ethic_authoritarian
-				has_ethic = ethic_fanatic_authoritarian
-				has_ethic = ethic_militarist
-				has_ethic = ethic_fanatic_militarist
+				is_authoritarian = yes
+				is_militarist = yes
 			}
 		}
 		

@@ -18,8 +18,8 @@ country_event = {
 		NOR = {
 			has_authority = auth_hive_mind
 			has_authority = auth_machine_intelligence
+			has_global_flag = mem_elusive_carcosa
 		}
-		NOT = { has_global_flag = mem_elusive_carcosa }
 		num_owned_planets > 4
 		FROM = { 
 			leader_class = scientist 
@@ -50,8 +50,7 @@ country_event = {
 							any_owned_planet = {
 								NOR = {
 									is_planet_class = pc_city
-									is_planet_class = pc_ringworld_habitable
-									is_planet_class = pc_habitat
+									is_artificial = yes
 								}
 								is_capital = no
 							}
@@ -60,8 +59,7 @@ country_event = {
 							limit = {
 								NOR = {
 									is_planet_class = pc_city
-									is_planet_class = pc_ringworld_habitable
-									is_planet_class = pc_habitat
+									is_artificial = yes
 								}
 								is_capital = no
 							}
@@ -128,8 +126,7 @@ country_event = {
 					any_owned_planet = {
 						NOR = {
 							is_planet_class = pc_city
-							is_planet_class = pc_ringworld_habitable
-							is_planet_class = pc_habitat
+							is_artificial = yes
 						}
 						num_pops < 25
 					}
@@ -138,8 +135,7 @@ country_event = {
 					limit = {
 						NOR = {
 							is_planet_class = pc_city
-							is_planet_class = pc_ringworld_habitable
-							is_planet_class = pc_habitat
+							is_artificial = yes
 						}
 						num_pops < 25
 					}
@@ -151,8 +147,7 @@ country_event = {
 					any_owned_planet = {
 						NOR = {
 							is_planet_class = pc_city
-							is_planet_class = pc_ringworld_habitable
-							is_planet_class = pc_habitat
+							is_artificial = yes
 						}
 					}
 				}
@@ -160,8 +155,7 @@ country_event = {
 					limit = {
 						NOR = {
 							is_planet_class = pc_city
-							is_planet_class = pc_ringworld_habitable
-							is_planet_class = pc_habitat
+							is_artificial = yes
 						}
 					}
 					save_global_event_target_as = mem_carcosa_colony_capture	
@@ -195,10 +189,9 @@ country_event = {
 						is_capital = no
 						NOR = {
 							is_planet_class = pc_city
-							is_planet_class = pc_ringworld_habitable
-							is_planet_class = pc_habitat
+							is_artificial = yes
+							is_same_value = event_target:mem_carcosa_colony
 						}
-						NOT = { is_same_value = event_target:mem_carcosa_colony }
 					}
 				}
 				random_owned_planet = {
@@ -207,10 +200,9 @@ country_event = {
 						is_capital = no
 						NOR = {
 							is_planet_class = pc_city
-							is_planet_class = pc_ringworld_habitable
-							is_planet_class = pc_habitat
+							is_artificial = yes
+							is_same_value = event_target:mem_carcosa_colony
 						}
-						NOT = { is_same_value = event_target:mem_carcosa_colony }
 					}
 					save_global_event_target_as = mem_carcosa_colony_2
 				}
@@ -299,11 +291,8 @@ country_event = {
 						NOR = {
 							is_same_value = event_target:mem_carcosa_colony
 							is_same_value = event_target:mem_carcosa_colony_2
-						}
-						NOR = {
 							is_planet_class = pc_city
-							is_planet_class = pc_ringworld_habitable
-							is_planet_class = pc_habitat
+							is_artificial = yes
 						}
 					}
 				}
@@ -312,11 +301,8 @@ country_event = {
 						NOR = {
 							is_same_value = event_target:mem_carcosa_colony
 							is_same_value = event_target:mem_carcosa_colony_2
-						}
-						NOR = {
 							is_planet_class = pc_city
-							is_planet_class = pc_ringworld_habitable
-							is_planet_class = pc_habitat
+							is_artificial = yes
 						}
 					}
 					save_global_event_target_as = mem_carcosa_colony_3
@@ -351,13 +337,10 @@ country_event = {
 					any_owned_planet = {
 						NOR = {
 							is_planet_class = pc_city
-							is_planet_class = pc_ringworld_habitable
-							is_planet_class = pc_habitat
-						}
-						NOR = { 
+							is_artificial = yes
 							is_same_value = event_target:mem_carcosa_colony
 							is_same_value = event_target:mem_carcosa_colony_2
-							is_same_value = event_target:mem_carcosa_colony_3 
+							is_same_value = event_target:mem_carcosa_colony_3
 						}
 					}
 				}
@@ -365,13 +348,10 @@ country_event = {
 					limit = {
 						NOR = {
 							is_planet_class = pc_city
-							is_planet_class = pc_ringworld_habitable
-							is_planet_class = pc_habitat
-						}
-						NOR = { 
+							is_artificial = yes
 							is_same_value = event_target:mem_carcosa_colony
 							is_same_value = event_target:mem_carcosa_colony_2
-							is_same_value = event_target:mem_carcosa_colony_3 
+							is_same_value = event_target:mem_carcosa_colony_3
 						}
 					}
 					save_global_event_target_as = mem_carcosa_colony_4
@@ -407,10 +387,7 @@ country_event = {
 				any_owned_planet = {
 					NOR = {
 						is_planet_class = pc_city
-						is_planet_class = pc_ringworld_habitable
-						is_planet_class = pc_habitat
-					}
-					NOR = { 
+						is_artificial = yes
 						is_same_value = event_target:mem_carcosa_colony
 						is_same_value = event_target:mem_carcosa_colony_2
 						is_same_value = event_target:mem_carcosa_colony_3
@@ -422,10 +399,7 @@ country_event = {
 				limit = {
 					NOR = {
 						is_planet_class = pc_city
-						is_planet_class = pc_ringworld_habitable
-						is_planet_class = pc_habitat
-					}
-					NOR = { 
+						is_artificial = yes
 						is_same_value = event_target:mem_carcosa_colony
 						is_same_value = event_target:mem_carcosa_colony_2
 						is_same_value = event_target:mem_carcosa_colony_3
@@ -488,10 +462,7 @@ ship_event = {
 	option = {
 		trigger = {
 			owner = {
-				OR = {
-					has_ethic = ethic_authoritarian
-					has_ethic = ethic_fanatic_authoritarian
-				}
+				is_authoritarian = yes
 			}
 		}
 		
@@ -528,8 +499,7 @@ ship_event = {
 		trigger = {
 			owner = {
 				NOR = {
-					has_ethic = ethic_authoritarian
-					has_ethic = ethic_fanatic_authoritarian
+					is_authoritarian = yes
 					has_ethic = ethic_fanatic_materialist
 					has_ethic = ethic_fanatic_xenophobe
 				}
@@ -657,10 +627,7 @@ country_event = {
 	#following options are for specific ethics
 	option = {
 		trigger = {
-			OR = {
-				has_ethic = ethic_authoritarian
-				has_ethic = ethic_fanatic_authoritarian
-			}
+			is_authoritarian = yes
 		}
 		
 		name = "mem_elusive_carcosa.14.col"
@@ -673,10 +640,7 @@ country_event = {
 	
 	option = {
 		trigger = {
-			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
-			}
+			is_materialist = yes
 		}
 		
 		name = "mem_elusive_carcosa.14.mat"
@@ -690,10 +654,8 @@ country_event = {
 	option = {
 		trigger = {
 			OR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-				has_ethic = ethic_militarist
-				has_ethic = ethic_fanatic_militarist
+				is_xenophobe = yes
+				is_militarist = yes
 			}
 		}
 		
@@ -708,10 +670,8 @@ country_event = {
 	option = {
 		trigger = {
 			OR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-				has_ethic = ethic_pacifist
-				has_ethic = ethic_fanatic_pacifist
+				is_xenophile = yes
+				is_pacifist = yes
 			}
 		}
 		
@@ -725,10 +685,7 @@ country_event = {
 	
 	option = {
 		trigger = {
-			OR = {
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
-			}
+			is_spiritualist = yes
 		}
 		
 		name = "mem_elusive_carcosa.14.spirit"
@@ -741,10 +698,7 @@ country_event = {
 	
 	option = {
 		trigger = {
-			OR = {
-				has_ethic = ethic_egalitarian
-				has_ethic = ethic_fanatic_egalitarian
-			}
+			is_egalitarian = yes
 		}
 		
 		name = "mem_elusive_carcosa.14.ind"
@@ -953,7 +907,7 @@ country_event = {
 		remove_modifier = mem_powering_memetic_overload
 		hidden_effect = {
 			set_country_flag = mem_carcosa_trustworthy
-			every_country = {
+			every_playable_country = {
 				limit = {
 					is_country_type = default
 					#is_ai = yes		#A hack to prevent giving opinion modifier of self

@@ -150,10 +150,7 @@ ship_event = {
 	option = {
 		trigger = { 
 			owner = {  
-				NOR = { 
-					has_ethic = ethic_xenophobe  
-					has_ethic = ethic_fanatic_xenophobe 
-				} 
+				is_xenophobe = no 
 			} 
 		}
 		name = mem_stuck_in_glacier.30a
@@ -178,8 +175,7 @@ ship_event = {
 		trigger = { 
 			owner = {  
 				OR = { 
-					has_ethic = ethic_xenophobe  
-					has_ethic = ethic_fanatic_xenophobe 
+					is_xenophobe = yes 
 				} 
 			} 
 		}
@@ -222,10 +218,7 @@ ship_event = {
 	option = {
 		trigger = { 
 			owner = {  
-				NOR = { 
-					has_ethic = ethic_authoritarian  
-					has_ethic = ethic_fanatic_authoritarian 
-				} 
+				is_authoritarian = no 
 			} 
 		}
 		name = mem_stuck_in_glacier.40a
@@ -244,8 +237,7 @@ ship_event = {
 		trigger = { 
 			owner = {  
 				OR = { 
-					has_ethic = ethic_authoritarian  
-					has_ethic = ethic_fanatic_authoritarian 
+					is_authoritarian = yes 
 				} 
 			} 
 		}

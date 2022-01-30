@@ -182,7 +182,7 @@ ship_event = {
             every_playable_country = {
                 limit = {
                     has_country_flag = mem_rubicon_gained_news
-                    NOT = { is_same_value = root.owner }
+                    NOT = { is_same_empire = root.owner }
                 }
                 abort_special_project = {
                     type = MEM_RUBICON_EXPEDITION
@@ -203,8 +203,7 @@ ship_event = {
         allow = {
             owner = {
                 NOR = {
-                    has_ethic = ethic_spiritualist
-                    has_ethic = ethic_fanatic_spiritualist
+                    is_spiritualist = yes
                     has_policy_flag = ai_outlawed
                 }
             }
@@ -216,8 +215,7 @@ ship_event = {
                 factor = 0
                 owner = {
                     OR = {
-                        has_ethic = ethic_spiritualist
-                        has_ethic = ethic_fanatic_spiritualist
+                        is_spiritualist = yes
                         has_policy_flag = ai_outlawed
                     }
                 }
@@ -293,8 +291,7 @@ ship_event = {
         trigger = {
             owner = {
                 OR = {
-                    has_ethic = ethic_spiritualist
-                    has_ethic = ethic_fanatic_spiritualist
+                    is_spiritualist = yes
                     has_policy_flag = ai_outlawed
                 }
             }
@@ -360,7 +357,7 @@ ship_event = {
                 event_target:mem_rubicon_core_planet = { #No Gaia for Xenos
                     NAND = {
                         exists = space_owner
-                        space_owner = { is_same_value = root }
+                        is_owned_by = root
                     }
                 }
             }

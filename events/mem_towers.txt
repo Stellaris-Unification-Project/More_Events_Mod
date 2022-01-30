@@ -261,8 +261,7 @@ country_event = {
 
         trigger = {
             OR = {
-                has_ethic = ethic_spiritualist
-                has_ethic = ethic_fanatic_spiritualist
+                is_spiritualist = yes
                 has_valid_civic = civic_fanatic_purifiers
             }
         }

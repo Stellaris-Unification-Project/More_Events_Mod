@@ -55,15 +55,13 @@ ship_event = {
 		trigger = {
 			owner = {
 				OR = {
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
+					is_xenophile = yes
 					AND = {
-						NOT = { has_ethic = ethic_xenophobe }
-						NOT = { has_ethic = ethic_fanatic_xenophobe }
-						OR = {
-							has_ethic = ethic_pacifist
-							has_ethic = ethic_fanatic_pacifist
+						NOR = {
+							has_ethic = ethic_xenophobe
+							has_ethic = ethic_fanatic_xenophobe
 						}
+						is_pacifist = yes
 					}
 				}
 			}
@@ -87,17 +85,11 @@ ship_event = {
 			NOT = {
 				owner = {
 					OR = {
-						has_valid_civic = civic_fanatic_purifiers
-						has_valid_civic = civic_hive_devouring_swarm
-						has_valid_civic = civic_machine_terminator
-						has_ethic = ethic_xenophobe
-						has_ethic = ethic_fanatic_xenophobe
-						has_ethic = ethic_militarist
-						has_ethic = ethic_fanatic_militarist
-						has_ethic = ethic_xenophile
-						has_ethic = ethic_fanatic_xenophile
-						has_ethic = ethic_pacifist
-						has_ethic = ethic_fanatic_pacifist
+						is_homicidal = yes
+						is_xenophobe = yes
+						is_militarist = yes
+						is_xenophile = yes
+						is_pacifist = yes
 					}
 				}
 			}
@@ -115,10 +107,8 @@ ship_event = {
 			owner = {
 				NOT = { has_valid_civic = civic_fanatic_purifiers }
 				OR = {
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
-					has_ethic = ethic_militarist
-					has_ethic = ethic_fanatic_militarist
+					is_xenophobe = yes
+					is_militarist = yes
 				}
 			}
 		}

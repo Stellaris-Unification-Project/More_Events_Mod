@@ -81,7 +81,7 @@ mem_neochadanus_seizes_ship_and_flees = {
 					is_capital = no
 					solar_system = {
 						NOT = {
-							is_same_value = root.owner.capital_scope.solar_system
+							is_same_empire = root.owner.capital_scope.solar_system
 						}
 					}
 				}
@@ -91,7 +91,7 @@ mem_neochadanus_seizes_ship_and_flees = {
 			limit = {
 				exists = owner
 				owner = {
-					is_same_value = root.owner
+					is_same_empire = root.owner
 				}
 				any_system_planet = {
 					has_owner = yes
@@ -121,7 +121,7 @@ mem_neochadanus_seizes_ship_and_flees = {
 			limit = {
 				exists = owner
 				owner = {
-					is_same_value = root.owner
+					is_same_empire = root.owner
 				}
 				any_system_planet = {
 					has_owner = yes

@@ -176,10 +176,7 @@ mem_vazuran_homesystem = {
 			size = starbase_citadel
 			owner = event_target:mem_vazurans_country
 		}
-		random_system_planet = {
-			limit = {
-				is_star = yes
-			}
+		star = {
 			create_fleet = {
 				settings = {
 					spawn_debris = no
@@ -548,10 +545,7 @@ mem_vazuran_homesystem_ruined = {
 				}
 			}
 		}
-		random_system_planet = {
-			limit = {
-				is_star = yes
-			}
+		star = {
 			create_ambient_object = {
 				type = mem_vazuran_big_station_wreckage_object
 			}

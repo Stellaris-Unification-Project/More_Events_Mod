@@ -22,8 +22,10 @@ mem_solar_riches_category = {
 		modifier = {
 			add = 2
 			is_star = yes
-			NOT = { is_planet_class = pc_black_hole }
-			NOT = { is_planet_class = pc_pulsar }
+			NOR = {
+				is_planet_class = pc_black_hole
+				is_planet_class = pc_pulsar
+			}
 		}
 	}
 

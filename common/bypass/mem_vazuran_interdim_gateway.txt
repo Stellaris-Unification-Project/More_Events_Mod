@@ -38,8 +38,7 @@ mem_vazuran_interdim_gateway = {
 				from = {
 					NOR = {
 						is_country_type = default
-						is_country_type = awakened_fallen_empire
-						is_country_type = fallen_empire
+						is_fallen_empire = yes
 					}
 				}
 			}

@@ -328,10 +328,7 @@ ship_event = {
 		custom_tooltip = mem_sleepers.5.c.tooltip
 		trigger = {
 			owner = {
-				NOR = {
-					has_ethic = ethic_fanatic_xenophile
-					has_ethic = ethic_xenophile
-				}
+				is_xenophile = no
 			}
 		}
 		hidden_effect = {
@@ -1217,7 +1214,7 @@ country_event = {
 				else_if = {
 					limit = {
 						starbase = {
-							NOT = { owner = { is_same_value = root } }
+							NOT = { is_owned_by = root }
 						}
 					}	
 					starbase = {
@@ -1460,10 +1457,7 @@ country_event = {
 	option = {
 		name = mem_sleepers.101.b
 		trigger = {
-			NOR = {
-				has_ethic = ethic_fanatic_xenophile
-				has_ethic = ethic_xenophile
-			}
+			is_xenophile = no
 		}
 		custom_tooltip = mem_sleepers.101.b.tooltip
 		hidden_effect = {
@@ -1873,7 +1867,7 @@ country_event = {
 				else_if = {
 					limit = {
 						starbase = {
-							NOT = { owner = { is_same_value = root } }
+							NOT = { is_owned_by = root }
 						}
 					}	
 					starbase = {

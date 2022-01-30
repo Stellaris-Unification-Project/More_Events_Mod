@@ -65,7 +65,7 @@ decision_mem_ark_release_pods = {
         }
 
         hidden_effect = {
-            every_country = {
+            every_playable_country = {
                 limit = {
                     has_special_project = MEM_ARK_PROJECT
                 }

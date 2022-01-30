@@ -139,8 +139,7 @@ fleet_event = {
                         exists = space_owner
                         space_owner = {
                             OR = {
-                                is_country_type = fallen_empire
-                                is_country_type = awakened_fallen_empire
+                                is_fallen_empire = yes
                                 is_country_type = dormant_marauders
                                 is_country_type = awakened_marauders
                                 has_country_flag = mem_surveyor_attacked_surveyor
@@ -212,8 +211,7 @@ fleet_event = {
                                 exists = space_owner
                                 space_owner = {
                                     OR = {
-                                        is_country_type = fallen_empire
-                                        is_country_type = awakened_fallen_empire
+                                        is_fallen_empire = yes
                                         is_country_type = dormant_marauders
                                         is_country_type = awakened_marauders
                                         has_country_flag = mem_surveyor_attacked_surveyor
@@ -356,8 +354,7 @@ country_event = {
         name = mem_surveyor.5.ega
         trigger = {
             OR = {
-                has_ethic = ethic_egalitarian
-                has_ethic = ethic_fanatic_egalitarian
+                is_egalitarian = yes
             }
         }
     }
@@ -366,8 +363,7 @@ country_event = {
         name = mem_surveyor.5.aut
         trigger = {
             OR = {
-                has_ethic = ethic_authoritarian
-                has_ethic = ethic_fanatic_authoritarian
+                is_authoritarian = yes
             }
         }
     }
@@ -376,8 +372,7 @@ country_event = {
         name = mem_surveyor.5.mat
         trigger = {
             OR = {
-                has_ethic = ethic_materialist
-                has_ethic = ethic_fanatic_materialist
+                is_materialist = yes
             }
         }
     }
@@ -386,8 +381,7 @@ country_event = {
         name = mem_surveyor.5.spi
         trigger = {
             OR = {
-                has_ethic = ethic_spiritualist
-                has_ethic = ethic_fanatic_spiritualist
+                is_spiritualist = yes
             }
         }
     }
@@ -396,8 +390,7 @@ country_event = {
         name = mem_surveyor.5.pac
         trigger = {
             OR = {
-                has_ethic = ethic_pacifist
-                has_ethic = ethic_fanatic_pacifist
+                is_pacifist = yes
             }
         }
     }
@@ -406,8 +399,7 @@ country_event = {
         name = mem_surveyor.5.mil
         trigger = {
             OR = {
-                has_ethic = ethic_militarist
-                has_ethic = ethic_fanatic_militarist
+                is_militarist = yes
             }
         }
     }
@@ -416,8 +408,7 @@ country_event = {
         name = mem_surveyor.5.phile
         trigger = {
             OR = {
-                has_ethic = ethic_xenophile
-                has_ethic = ethic_fanatic_xenophile
+                is_xenophile = yes
             }
         }
     }
@@ -426,8 +417,7 @@ country_event = {
         name = mem_surveyor.5.phobe
         trigger = {
             OR = {
-                has_ethic = ethic_xenophobe
-                has_ethic = ethic_fanatic_xenophobe
+                is_xenophobe = yes
             }
         }
     }
@@ -577,9 +567,7 @@ country_event = {
             limit = { 
                 is_country_type = default 
                 NOR = {
-                    has_valid_civic = civic_fanatic_purifiers
-                    has_valid_civic = civic_hive_devouring_swarm
-                    has_valid_civic = civic_machine_terminator
+                    is_homicidal = yes
                     has_valid_civic = civic_machine_assimilator
                 }
             }
@@ -963,10 +951,7 @@ country_event = {
     trigger = {
         any_owned_planet = {
             is_capital = no
-            NOR = {
-                is_planet_class = pc_ringworld_habitable
-                is_planet_class = pc_habitat
-            }
+            is_artificial = no
         }
     }
 
@@ -974,10 +959,7 @@ country_event = {
         random_owned_planet = {
             limit = {
                 is_capital = no
-                NOR = {
-                    is_planet_class = pc_ringworld_habitable
-                    is_planet_class = pc_habitat
-                }
+                is_artificial = no
             }
             save_event_target_as = amplifier_planet
         }
@@ -1227,8 +1209,10 @@ country_event = {
                     factor = 0
                     NOT = {
                         any_country = {
-                            NOT = { is_same_value = root }
-                            NOT = { has_communications = root }
+                            NOR = {
+	is_same_value = root
+	has_communications = root
+}
                             OR = {
                                 is_country_type = default
                                 is_country_type = fallen_empire
@@ -1420,8 +1404,10 @@ country_event = {
     immediate = {
         random_country = {
             limit = {
-                NOT = { is_same_value = root }
-                NOT = { has_communications = root }
+                NOR = {
+	is_same_value = root
+	has_communications = root
+}
                 OR = {
                     is_country_type = default
                     is_country_type = fallen_empire
@@ -1872,7 +1858,7 @@ fleet_event = {
                 limit = { # If probe touched the star, starbase is likely disabled by third party. Remove it.
                     exists = starbase
                     starbase = {
-                        owner = { NOT = { is_same_value = root.owner } }
+                        owner = { NOT = { is_same_empire = root.owner } }
                     }
                     prev = {
                         NOT = { has_fleet_flag = mem_surveyor_order_from_planet }
@@ -1899,7 +1885,7 @@ fleet_event = {
                     any_neighbor_system = {
                         exists = space_owner
                         space_owner = {
-                            is_same_value = root.owner
+                            is_same_empire = root.owner
                         }
                     }
                 }
@@ -1910,7 +1896,7 @@ fleet_event = {
                             any_neighbor_system = {
                                 any_system_planet = {
                                     exists = owner
-                                    owner = { is_same_value = root.owner }
+                                    is_owned_by = root.owner
                                 }
                             }
                         }
@@ -2024,7 +2010,7 @@ fleet_event = {
                         AND = {
                             exists = space_owner
                             NOT = {
-                                space_owner = { is_same_value = root.owner } # Should not loop
+                                is_owned_by = root.owner # Should not loop
                             }
                             OR = {
                                 space_owner = { is_country_type = default }
@@ -2473,7 +2459,7 @@ planet_event = {
         # NAND = {
         #     exists = space_owner
         #     space_owner = {
-        #         NOT = { is_same_value = root.owner }
+        #         NOT = { is_same_empire = root.owner }
         #     }
         #     exists = starbase
         #     starbase = { is_disabled = no }
@@ -2843,8 +2829,7 @@ country_event = {
         exclusive_trigger = {
             event_target:probe_killers = {
                 OR = {
-                    is_country_type = fallen_empire
-                    is_country_type = awakened_fallen_empire
+                    is_fallen_empire = yes
                     is_guardian_country = yes
                     is_country_type = guardian_scavenger_bot
                     is_country_type = guardian_elderly_tiyanki
@@ -2942,9 +2927,7 @@ country_event = {
             limit = { 
                 is_country_type = default 
                 NOR = {
-                    has_valid_civic = civic_fanatic_purifiers
-                    has_valid_civic = civic_hive_devouring_swarm
-                    has_valid_civic = civic_machine_terminator
+                    is_homicidal = yes
                     has_valid_civic = civic_machine_assimilator
                 }
             }
@@ -3022,7 +3005,7 @@ country_event = {
         NOT = { has_global_flag = mem_surveyor_survivor_spawned }
         any_system = {
             exists = space_owner
-            space_owner = { is_same_value = root }
+            is_owned_by = root
         }
         any_country = {
             is_country_type = mem_surveyor_country_red
@@ -3034,7 +3017,7 @@ country_event = {
         random_system = {
             limit = {
                 exists = space_owner
-                space_owner = { is_same_value = root }
+                is_owned_by = root
             }
             # log = "[This.GetName] is the starting system."
             save_event_target_as = starting_system
@@ -3218,11 +3201,7 @@ country_event = {
     option = {
         name = mem_surveyor.242.purifier
         exclusive_trigger = {
-            OR = {
-                has_valid_civic = civic_fanatic_purifiers
-                has_valid_civic = civic_hive_devouring_swarm
-                has_valid_civic = civic_machine_terminator
-            }
+            is_homicidal = yes
         }
     }
 }
@@ -3490,11 +3469,7 @@ country_event = {
         default_hide_option = yes
         remove_country_flag = mem_surveyor_avengers_diplomacy
         exclusive_trigger = {
-            OR = {
-                has_valid_civic = civic_fanatic_purifiers
-                has_valid_civic = civic_hive_devouring_swarm
-                has_valid_civic = civic_machine_terminator
-            }
+            is_homicidal = yes
             NOT = { event_target:mem_surveyor_avengers_leader = { is_same_species = root } }
         }
     }
@@ -4246,11 +4221,7 @@ country_event = {
         default_hide_option = yes
         remove_country_flag = mem_surveyor_mercenary_diplomacy
         exclusive_trigger = {
-            OR = {
-                has_valid_civic = civic_fanatic_purifiers
-                has_valid_civic = civic_hive_devouring_swarm
-                has_valid_civic = civic_machine_terminator
-            }
+            is_homicidal = yes
             NOT = { event_target:mem_surveyor_avengers_leader = { is_same_species = root } }
         }
     }
@@ -4584,7 +4555,7 @@ planet_event = {
     }
 
     trigger = {
-        exists = solar_system.space_owner
+        has_owner = yes
         has_research_station = yes
         has_modifier = mem_surveyor_alkree_homeworld
         solar_system.space_owner = {

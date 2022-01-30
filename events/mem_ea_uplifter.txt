@@ -651,8 +651,7 @@ ship_event = {
 	
 	immediate = {
 		solar_system  = {
-			random_system_planet = {
-				limit = { is_star = yes }
+			star = {
 				save_event_target_as = MonsterLocation
 				create_crystal_country = yes
 				event_target:crystal_country = {

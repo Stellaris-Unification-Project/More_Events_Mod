@@ -509,11 +509,11 @@ ship_event = {
 	immediate = {
 		IF = {
 			limit = {
-				any_country = {
+				any_playable_country = {
 					has_communications = root.owner
 					is_country_type = default
 					NOT = {
-						is_same_value = root.owner
+						is_same_empire = root.owner
 					}
 				}
 			}
@@ -592,7 +592,7 @@ country_event = {
 	immediate = {
 		IF = {
 			limit = {
-				any_country = {
+				any_playable_country = {
 					has_communications = root
 					is_country_type = default
 					NOT = {
@@ -803,10 +803,7 @@ country_event = {
 		custom_tooltip = mem_hollow_asteroid.104.e.tooltip
 		trigger = {
 			has_country_flag = mem_hollow_asteroid_pirates_foreign
-			NOR = {
-				has_ethic = ethic_fanatic_xenophobe
-				has_ethic = ethic_xenophobe
-			}
+			is_xenophobe = no
 		}
 		hidden_effect = {
 			every_country = {

@@ -14,8 +14,10 @@ country_event = {
 	}
 	
 	trigger = {
-		NOT = { has_global_flag = mem_colony_ship_started }
-		NOT = { has_country_flag = mem_colony_ship_rolled }
+		NOR = {
+			has_global_flag = mem_colony_ship_started
+			has_country_flag = mem_colony_ship_rolled
+		}
 		is_ai = no
 		is_country_type = default
 		any_system_within_border = {
@@ -271,10 +273,8 @@ country_event = {
 		
 		trigger = {
 			OR = {
-				has_ethic = ethic_militarist
-				has_ethic = ethic_fanatic_militarist
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
+				is_militarist = yes
+				is_xenophobe = yes
 				has_authority = auth_hive_mind
 			}
 			NOT = { has_valid_civic = civic_fanatic_purifiers }
@@ -489,11 +489,7 @@ country_event = {
 		name = mem_colony_ship.8.c
 		custom_tooltip = mem_colony_ship.8.b.tooltip
 		exclusive_trigger = {
-			OR = {
-				has_valid_civic = civic_fanatic_purifiers
-				has_valid_civic = civic_machine_terminator
-				has_valid_civic = civic_hive_devouring_swarm
-			}
+			is_homicidal = yes
 		}
 	}
 }
@@ -655,7 +651,7 @@ country_event = {
 				if = {
 					limit = {
 						exists = starbase
-						starbase = { owner = { is_same_value = root } }
+						starbase = { is_owned_by = root }
 					}
 					starbase = {
 						set_owner = event_target:landed_country
@@ -679,7 +675,7 @@ country_event = {
 				every_system_planet = {
 					limit = {
 						exists = owner
-						owner = { is_same_value = root }
+						is_owned_by = root
 					}
 					set_owner = event_target:landed_country			
 				}
@@ -738,7 +734,7 @@ country_event = {
 				if = {
 					limit = {
 						exists = starbase
-						starbase = { owner = { is_same_value = root } }
+						starbase = { is_owned_by = root }
 					}
 					starbase = {
 						set_owner = event_target:landed_country
@@ -747,7 +743,7 @@ country_event = {
 				every_system_planet = {
 					limit = {
 						exists = owner
-						owner = { is_same_value = root }
+						is_owned_by = root
 					}
 					set_owner = event_target:landed_country			
 				}

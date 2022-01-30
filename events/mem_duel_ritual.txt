@@ -107,10 +107,7 @@ planet_event = {
 		custom_tooltip = mem_duel_ritual.4.tooltip
 		trigger = { 
 			owner = {
-				NOR = {
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
-				}
+				is_xenophobe = no
 			}
 		}
 		hidden_effect = {
@@ -131,10 +128,7 @@ planet_event = {
 		custom_tooltip = mem_duel_ritual.4.tooltip
 		trigger = { 
 			owner = {
-				OR = {
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
-				}
+				is_xenophobe = yes
 			}
 		}
 		hidden_effect = {
@@ -181,15 +175,10 @@ planet_event = {
 		trigger = { 
 			owner = {
 				OR = {
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
-					has_ethic = ethic_militarist
-					has_ethic = ethic_fanatic_militarist
+					is_xenophobe = yes
+					is_militarist = yes
 				}
-				NOR = {
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
-				}
+				is_xenophile = no
 			}
 		}
 		owner = {

@@ -39,12 +39,9 @@ mem_super_robot_army = {
 				has_deposit = d_mem_ancient_robots_factory
 			}
 			owner = {
-				NOT = { 
-					 check_variable = {
+				check_variable = {
 						which = "mem_super_robot_army_count" 
-						value = 4
-					}
-				}
+						value != 4 }
 			}
 		}
 	}

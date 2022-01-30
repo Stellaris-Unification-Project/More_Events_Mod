@@ -15,13 +15,11 @@ country_event = {
         is_country_type = marauder_raiders
         from = {
             is_ai = no
-            NOT = { has_country_flag = mem_dread_pirate_offered_quest }
             NOR = {
-                has_valid_civic = civic_fanatic_purifiers
-                has_valid_civic = civic_hive_devouring_swarm
-                has_valid_civic = civic_hive_devouring_swarm
+	has_country_flag = mem_dread_pirate_offered_quest
+	is_homicidal = yes
                 has_country_flag = mem_dread_pirate_initial_fail
-            }
+}
         }
         any_country = {
             is_country_type = dormant_marauders
@@ -73,8 +71,10 @@ country_event = {
     picture = GFX_evt_mem_heavy_damage
 
     trigger = {
-        NOT = { has_country_flag = mem_dread_pirate_offered_quest }
-        NOT = { has_global_flag = mem_dread_pirate_global_lock }
+        NOR = {
+	has_country_flag = mem_dread_pirate_offered_quest
+	has_global_flag = mem_dread_pirate_global_lock
+}
         exists = event_target:marauder_sender
         event_target:marauder_sender = {
             is_country_type = dormant_marauders
@@ -87,8 +87,10 @@ country_event = {
             NOT = { exists = archaeological_site }
             has_anomaly = no
             solar_system = {
-                NOT = { is_same_value = root.capital_scope.solar_system }
-                NOT = { is_same_value = event_target:combat_system }
+                NOR = {
+	is_same_value = root.capital_scope.solar_system
+	is_same_value = event_target:combat_system
+}
             }
         }
     }
@@ -105,8 +107,10 @@ country_event = {
                 NOT = { exists = archaeological_site }
                 has_anomaly = no
                 solar_system = {
-                    NOT = { is_same_value = root.capital_scope.solar_system }
-                    NOT = { is_same_value = event_target:combat_system }
+                    NOR = {
+	is_same_value = root.capital_scope.solar_system
+	is_same_value = event_target:combat_system
+}
                 }
             }
             save_event_target_as = the_planet
@@ -900,11 +904,7 @@ country_event = {
         is_dialog_only = yes
 
         trigger = {
-            NOR = {
-                has_valid_civic = civic_fanatic_purifiers
-                has_valid_civic = civic_hive_devouring_swarm
-                has_valid_civic = civic_machine_terminator
-            }
+            is_homicidal = no
         }
     }
     option = {

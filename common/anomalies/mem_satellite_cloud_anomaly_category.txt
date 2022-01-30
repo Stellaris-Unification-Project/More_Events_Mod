@@ -8,8 +8,10 @@ mem_satellite_cloud_category = {
 		modifier = {
 			add = 3
 			is_star = yes
-			NOT = { is_planet_class = pc_black_hole }
-			NOT = { is_planet_class = pc_pulsar }
+			NOR = {
+				is_planet_class = pc_black_hole
+				is_planet_class = pc_pulsar
+			}
 		}
 	}
 

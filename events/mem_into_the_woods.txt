@@ -133,9 +133,7 @@ fleet_event = {
                 is_xenophile = no
                 NOR = { 
                     has_valid_civic = civic_machine_servitor
-                    has_valid_civic = civic_machine_terminator
-                    has_valid_civic = civic_hive_devouring_swarm
-                    has_valid_civic = civic_fanatic_purifiers
+                    is_homicidal = yes
                 }
             }
         }

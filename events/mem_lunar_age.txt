@@ -259,28 +259,22 @@ country_event = {
 		
 		modifier = {
 			factor = 0.75
-			OR = {
-				has_ethic = ethic_egalitarian
-				has_ethic = ethic_fanatic_egalitarian
-			}
+			is_egalitarian = yes
 		}
 		
 		modifier = {
 			factor = 0.75
-			OR = {
-				has_ethic = ethic_militarist
-				has_ethic = ethic_fanatic_militarist
-			}
+			is_militarist = yes
 		}
 	}
 	
 	trigger = {
 		is_country_type = primitive
 		has_country_flag = mem_lunar_age_colony
-		NOT = {
+		NOR = {
 			has_global_flag = mem_lunar_age_path_chosen
+			has_global_flag = mem_lunar_age_grace_period
 		}
-		NOT = { has_global_flag = mem_lunar_age_grace_period }
 		capital_scope = {
 			OR = {
 				has_observation_outpost = no
@@ -844,10 +838,8 @@ country_event = {
 				has_ethic = ethic_fanatic_pacifist
 			}
 			OR = {
-				has_ethic = ethic_militarist
-				has_ethic = ethic_fanatic_militarist
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
+				is_militarist = yes
+				is_xenophobe = yes
 			}
 		}
 		
@@ -1538,10 +1530,7 @@ country_event = {
 		
 		modifier = {
 			factor = 5
-			OR = {
-				has_ethic = ethic_pacifist
-				has_ethic = ethic_fanatic_pacifist
-			}
+			is_pacifist = yes
 		}
 		
 		modifier = {
@@ -1554,10 +1543,7 @@ country_event = {
 		
 		modifier = {
 			factor = 0.75
-			OR = {
-				has_ethic = ethic_egalitarian
-				has_ethic = ethic_fanatic_egalitarian
-			}
+			is_egalitarian = yes
 		}
 	}
 	
@@ -1722,7 +1708,7 @@ country_event = {
 			solar_system = {
 				if = {
 					limit = {
-						starbase = { owner = { is_same_value = root } }
+						starbase = { is_owned_by = root }
 					}
 					starbase = {
 						set_owner = event_target:country_we_uplifted
@@ -2144,7 +2130,7 @@ country_event = {
 				else_if = {
 					limit = {
 						starbase = {
-							NOT = { owner = { is_same_value = root } }
+							NOT = { is_owned_by = root }
 						}
 					}	
 					starbase = {
@@ -2219,10 +2205,8 @@ country_event = {
 			is_country_type = primitive
 			has_country_flag = mem_lunar_age
 			NOR = {
-				has_ethic = ethic_pacifist
-				has_ethic = ethic_fanatic_pacifist
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
+				is_pacifist = yes
+				is_xenophile = yes
 			}
 			capital_scope = {
 				NAND = {
@@ -2566,7 +2550,7 @@ country_event = {
 				else_if = {
 					limit = {
 						starbase = {
-							NOT = { owner = { is_same_value = root } }
+							NOT = { is_owned_by = root }
 						}
 					}	
 					starbase = {
